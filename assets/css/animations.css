@@ -1,0 +1,140 @@
+/* Animation Classes */
+.animate-fadeIn {
+    animation: fadeIn 1s ease forwards;
+}
+
+.animate-slideUp {
+    animation: slideUp 0.8s ease forwards;
+}
+
+.animate-delay-1 {
+    animation-delay: 0.2s;
+}
+
+.animate-delay-2 {
+    animation-delay: 0.4s;
+}
+
+.animate-delay-3 {
+    animation-delay: 0.6s;
+}
+
+.animate-delay-4 {
+    animation-delay: 0.8s;
+}
+
+.animate-delay-5 {
+    animation-delay: 1s;
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { 
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from { 
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from { 
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 5px rgba(159, 239, 0, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(159, 239, 0, 0.8); }
+    100% { box-shadow: 0 0 5px rgba(159, 239, 0, 0.5); }
+}
+
+/* Element Animations */
+.btn-glow {
+    animation: glow 2s infinite;
+}
+
+.card-icon i {
+    transition: var(--transition);
+}
+
+.about-card:hover .card-icon i {
+    animation: pulse 0.5s ease;
+}
+
+.nav-link.active::after {
+    animation: slideInLeft 0.3s ease forwards;
+}
+
+/* Scroll Animations */
+[data-animate] {
+    opacity: 0;
+    transition: all 0.8s ease;
+}
+
+[data-animate="fadeIn"] {
+    opacity: 0;
+}
+
+[data-animate="fadeIn"].animated {
+    opacity: 1;
+}
+
+[data-animate="slideUp"] {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+[data-animate="slideUp"].animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+[data-animate="slideLeft"] {
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+[data-animate="slideLeft"].animated {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+[data-animate="slideRight"] {
+    opacity: 0;
+    transform: translateX(50px);
+}
+
+[data-animate="slideRight"].animated {
+    opacity: 1;
+    transform: translateX(0);
+}
